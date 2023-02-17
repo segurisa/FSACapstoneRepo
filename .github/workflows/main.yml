@@ -1,0 +1,27 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build and Test
+      run: |
+        npm install
+        npm run build
+        npm test
+
+    - name: Deploy
+      uses: appleboy/scp-action@master
+      with:
+        host: <your-ec2-instance-ip>
+        username: <your-ec2-instance-username>
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: "build/"
+        target: "/var/www/html"
