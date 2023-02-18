@@ -1,0 +1,8 @@
+For our project, we attempted to mimic a small florist location needing to create a website that can achieve the following:
+
+1. Handle current traffic and expected increased traffic for Valentine's Day
+2. Monitor traffic and keep logs of all activity; suspicious or not
+3. Set up an inventory that can hold all items currently in inventory and accomodate for new items
+4. Can properly...
+  a. Process items from inventory for purchase
+  b. Create and place orders from purchases made
